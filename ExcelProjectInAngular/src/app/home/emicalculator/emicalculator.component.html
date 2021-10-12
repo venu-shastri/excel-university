@@ -1,0 +1,131 @@
+<div class="container">
+    <h1>Excel Bank Student Loan</h1>
+    <button class="btn btn-link" (click)="onBack()">Back</button>
+    <div class="well">
+        <div class="row">
+            <div class="col-sm-6">
+             
+                <h3>Type Of EMI</h3>
+                <br>    
+                <h5>
+                        Loan Amount 
+                </h5>
+    <div>
+    <div class="row col-sm-12">
+            <div class="col-sm-6">
+       
+        <input type="range" class="slider" id="fromPrice" #laonamount value="{{LoanSlider}}" min="1500" max="999999" 
+            oninput="document.getElementById('fPrice').innerHTML = this.value" (change)="onLoan(laonamount.value)"  />
+            </div>
+            <div class="col-sm-6">
+   
+        <input class="Slider" #LA type="number" min="1500" max="999999" value="{{SliderLA}}" (input)="onValueChange(LA.value)" (change)="onLoan(LA.value)">
+      
+        
+      
+   </div>
+   </div>
+   <br>
+    <h5>
+            Tenure(months)
+    </h5>
+   <div class="row col-sm-12">
+      <div class="col-sm-6">
+        <input type="range" step="6" id="toPrice" #tenure class="slider" value="{{TenureSlider}}" min="12" value="[12,18,24]" max="24" 
+            oninput="document.getElementById('tPrice').innerHTML = this.value" (change)="onTenure(tenure.value)" />
+         </div> 
+         <div class="col-sm-6">
+     
+  <select class="Slider" #TEN type="text"  value="{{SliderTenure}}" (input)="onTenValueChange(TEN.value)" (change)="onTenure(TEN.value)">
+    
+    <option>12 </option>
+      <option>18 </option>
+
+      <option>24 </option>
+
+  </select>
+    </div>
+</div>
+<br>
+<h5>
+        Rate of Interest Per Annum (%)
+</h5>
+<div class="row col-sm-12">
+  <div class="col-sm-6">
+    <input type="range" id="rateofinterest" #rateofinterest class="slider" value="{{RISlider}}" min="1" max="20" 
+        oninput="document.getElementById('rateinterest').innerHTML = this.value" (change)="onRateofinterest(rateofinterest.value)" />
+     </div> 
+     <div class="col-sm-6">
+    <!-- <label id="rateinterest"></label> -->
+    <input class="Slider" type="number" min="1" step="0.01" max="20" #RI value="{{SliderRI}}" (input)="onRIValueChange(RI.value)" (change)="onRateofinterest(RI.value)"/>
+
+</div>
+</div>
+<br>
+<br>
+<div class="container">
+<div class="row">
+<h6>Monthly EMI: Rs.{{EMI}}</h6>
+
+
+    <h6>Total Interest Amount :Rs.{{Interest}}</h6>
+ 
+        <h6>Total Amount Payable :Rs.{{Amount}}</h6>
+     
+</div>
+
+</div>
+</div>
+</div>
+
+    <div class="col-sm-6">
+             
+            <h3>Amount and Interest</h3> 
+<div class="row">
+    <div class="col-sm-2">
+ <label><input [value]="1" [(ngModel)]="isVisible"  name="isVisible" type="radio" [checked]="isSelected"/> Table </label></div>
+ <div class="col-sm-2">
+ <label> <input [value]="0" [(ngModel)]="isVisible" name="isVisible"  type="radio"  [checked]="!isSelected"/> Graph </label>  </div>  
+          <div class="showDiv" *ngIf="isVisible == 1">
+                <table>
+            
+                        <th>Installment No<br>
+                            <hr >
+                            <tr *ngFor="let l of row">{{l+1}}</tr>
+                        </th>
+                       
+                        <th>EMI Amount
+                            <br>
+                         <hr>
+                         <tr *ngFor="let l of row">{{EMI}}</tr>
+                             
+                        </th>
+                        <th>Principal<br><br>
+                         <hr>
+                         <tr *ngFor="let k of PARow">{{k}}</tr>
+             
+                        </th>
+                        <th>Interest<br><br>
+                         <hr>
+                         <tr *ngFor="let o of RIRow">{{o}}</tr>
+                            
+                        </th>
+                        <th>Balance Amount<br>
+                         <hr>
+                         <tr *ngFor="let p of balanceamtRow">{{p}}</tr></th>
+                     </table>
+          </div>
+          <div class="hideDiv" *ngIf="isVisible == 0">
+                <!-- <div class="block" style="display: block;">
+                        <canvas baseChart 
+                          [datasets]="lineChartData"
+                          [labels]="lineChartLabels"
+                          [options]="lineChartOptions"
+                          [colors]="lineChartColors"
+                          [legend]="lineChartLegend"
+                          [chartType]="lineChartType"
+                          [plugins]="lineChartPlugins">
+                        </canvas>
+                      </div> -->
+          </div>
+    

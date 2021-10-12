@@ -1,0 +1,27 @@
+<h1>Student Dashboard</h1>
+<div class="block">
+        <h2>{{Username}}</h2>
+        <img src="{{models}}">
+    </div>
+<div *ngIf="isdisplay" id="divhide">
+      
+<button class="btn btn-link" (click)="onLoanCalculator()">Loan Calculator</button>
+<button class="btn btn-primary" (click)="onLogout()">Logout</button>
+</div>
+<div *ngIf="isShown" id="divshow">
+       <h3 class="center">  Courses</h3>
+<div class="course">
+    <button class="btn btn-info">C#</button>
+    <button class="btn btn-info">ASP .NET</button>
+    <button class="btn btn-info">Java</button><br/>
+    <button class="btn btn-info">PHP</button>
+    <button class="btn btn-info">Angular</button>
+    <button class="btn btn-info">JQuery</button><br/>
+    <button class="btn btn-info">HTML</button>
+    <button class="btn btn-info">CSS</button>
+    <button class="btn btn-info">Bootstrap</button>
+</div>
+</div>
+<!-- <app-emicalculator></app-emicalculator> -->
+<router-outlet></router-outlet>
+<!-- <app-excelbank></app-excelbank> -->

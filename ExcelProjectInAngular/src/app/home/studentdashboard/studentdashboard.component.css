@@ -1,0 +1,42 @@
+.btn-primary{
+    float: left;
+    margin-left: 100px;
+}
+.btn-link{
+    float: right;
+    margin-right: 100px;
+}
+.btn-info{
+    margin: 15px;
+    width: 100px;
+}
+.course{
+    text-align: center;
+}
+h1{
+    text-align:center;
+}
+h3{
+  
+    padding-top: 80px;
+}
+h2{
+    float: right;
+    margin-right:1083px;
+    margin-top: 15px;
+}
+img{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: thick;
+    border-color:#969696;
+    margin-left: 93px;
+    margin-bottom: 7px;
+    margin-top: -6px;
+    /* / margin-left: -105px; / */
+}
+.center{
+text-align: center;
+}

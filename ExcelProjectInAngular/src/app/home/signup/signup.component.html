@@ -1,0 +1,60 @@
+<div class="container">
+        <div class="center top"> 
+            <h2>Signup Details</h2>    
+        
+        <form [formGroup]="detailsform">
+            <table class="center">  
+                <tr>
+                 
+                   <td> <label>Username:</label><br><br></td>
+                    <td> <input type="text" formControlName="username" class="form-control" placeholder="Enter the Username" #usernametextBox type="text" (input)="onUsernameEdit(usernametextBox.value)" [value]="username"><br></td>
+                    <td><span class="error" *ngIf="username!.invalid">*</span></td>
+                    <br><br>
+                
+                </tr>
+                <tr>
+                    <td> <label>
+                        Password:</label><br><br></td>
+                    <td> <input type="password" formControlName="password" class="form-control" placeholder="Enter the Password" #passwordtextbox    (input)="onPasswordEdit(passwordtextbox.value)" [value]="password"><br></td>
+                        <td><span class="error" *ngIf="password!.invalid">*</span></td>
+                    <br><br>
+                </tr>
+                <tr>
+                        <td> <label>
+                            Email:</label><br><br></td>
+                        <td> <input type="email" formControlName="email" class="form-control" placeholder="Enter the Email" #emailtextbox    (input)="onEmailEdit(emailtextbox.value)" [value]="email"><br></td>
+                            <td><span class="error" *ngIf="email!.invalid">*</span></td>
+                        <br><br>
+                    </tr>
+                <tr>
+                        <tr>
+                                <td> <label>
+                                    Phonenumber:</label><br><br></td>
+                                <td> <input type="text" formControlName="phonenumber" class="form-control" placeholder="Enter the Phonenumber" #phonenumbertextbox  type="text"  (input)="onPhonenumberEdit(phonenumbertextbox.value)" [value]="phonenumber"><br></td>
+                                    <td><span class="error" *ngIf="phonenumber!.invalid">*</span></td>
+                                <br><br>
+                            </tr>
+                <tr>
+                        <tr>
+                                <tr>
+                                        <td> <label>
+                                            Image:</label><br><br></td>
+                                        <td> <input type="file"  formControlName="image" class="form-control" placeholder="Enter the Image" #imagetextbox  (input)="onImageEdit(imagetextbox.value)" [value]="image"><br></td>
+                                     
+                                        <td><span class="error" *ngIf="image!.invalid">*</span></td>
+                                        <br><br>
+                                    </tr>
+                                
+                        <tr>
+                    <td><form [formGroup]="detailsform" (ngSubmit)="onSubmit(detailsform.value)"></form></td>   
+                    <div class="form-group">
+                    <button type="submit" class="btn btn-primary"  (click)="onSubmit(detailsform.value)">Submit</button>
+                    <button (click)="onClear()" class="btn btn-link" type="reset">Reset</button>
+                    </div>
+                </tr>
+                
+            </table>
+        </form>
+        </div>
+        </div>
+        

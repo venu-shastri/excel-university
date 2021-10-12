@@ -1,0 +1,22 @@
+.slider{
+    background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));}
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 20px;
+        text-align: center
+      }
+      hr{
+        color: black;
+        border-top: 2px solid black;
+    }
+    .Slider{
+        width: 75px;
+      }
+      .slider{
+        width: 100%;
+      }
+      .well{
+        background-color:#f5f5f5;
+        padding: 25px;
+      }
