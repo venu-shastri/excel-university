@@ -1,1 +1,2 @@
-
+- I have done emi calculator table part and chart.
+- I have created class library for all the refactored classes in  emi calculator.
