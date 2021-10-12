@@ -1,1 +1,3 @@
-
+- Worked on UI, signup page.
+- Worked on EMI Cacluator part.
+- Working on Navigation Part.
